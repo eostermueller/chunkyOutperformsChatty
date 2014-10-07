@@ -33,7 +33,7 @@ The smaller the scenario number, the fewer the SQL invocations to accomplish the
 
 | Tables        | PGBENCH_ACCOUNTS           | PGBENCH_HISTORY  | Notes |
 | ------------- |:--------------|:----- |:-----|
-| Scenario_1    | 1 SELECT, OUTER JOIN to PGBENCH_HISTORY      |   | The Chunkiest of the 5.  Rarely seen in the wild |
+| [Scenario_1](https://github.com/eostermueller/chunkyOutperformsChatty/tree/master/src/main/java/com/github/eostermueller/pgbench/dataaccess_1)    | 1 SELECT, OUTER JOIN to PGBENCH_HISTORY      |   | The Chunkiest of the 5.  Rarely seen in the wild |
 | Scenario_2    | 1 SELECT      |   1 SELECT | Rarely seen in the wild  |
 | Scenario_3    | 1 SELECT      | 1 SELECT per account |  |
 | Scenario_4    | 1 SELECT per account  | 1 SELECT per account |  |
