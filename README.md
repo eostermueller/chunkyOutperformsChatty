@@ -41,6 +41,18 @@ The smaller the scenario number, the fewer the SQL invocations to accomplish the
 | [Scenario_5](https://github.com/eostermueller/chunkyOutperformsChatty/tree/master/src/main/java/com/github/eostermueller/pgbench/dataaccess_5)    | 1 SELECT per account  | 1 SELECT PER account to retrieve unique IDs.  1 SELECT for each full history record. | The  Chattiest of the 5. |
 
 ## Instructions
+
+1. Install PostGreSQL.  I used 9.2
+2. Load pgbench sample data as detailed below.
+3. Add a seuquence / primary key to the pgbench_history table.
+4. [Download the war](https://github.com/eostermueller/chunkyOutperformsChatty/archive/master.zip) file and unzipt it to a blank folder.
+5. Make sure the JDBC connection info is right in this file: ```./src/main/webapp/META-INF/context.xml```
+5. Build it with  ```mvn clean package```
+5. Deploy target/sqlPerfAntiPatterns.war to Tomcat 7+
+6. Run the service using this URL:
+```
+localhost:8082/sqlPerfAntiPatterns/sqlPerfServlet?pgbenchScenarioNum=2&pgbenchAccountIds=34591,9483121,78941,111294,9122
+```
 The following populates the pgbench_accounts table, but not the pgbench_history table:
 ```
 export DB_NAME=db_pgbench
