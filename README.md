@@ -18,7 +18,7 @@ The requirements:
 
 ```
 Given 1 to N account numbers, return transaction history and balance info for all accounts.  
-All 5 scenarios must use the exact same pojos, and same XML serialization code.
+All 5 scenarios must build the response data using the exact same pojos and the same XML serialization code.
 ```
 
 The smaller the scenario number, the fewer the SQL invocations to accomplish the exact same requirements.
