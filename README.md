@@ -5,7 +5,8 @@ A performance comparison of 5 different SQL data access strategies (in Java).
 
 [Martin Fowler](http://martinfowler.com/) was widely ignored when he gave [this advice](http://www.informit.com/articles/article.aspx?p=30661&seqNum=3) for better SQL performance:
 ```
-"Try to pull back multiple rows at once. In particular, never do repeated queries on the same table to get multiple rows."
+>  "Try to pull back multiple rows at once. In particular, never do repeated queries   
+>  on the same table to get multiple rows."  
 ```
 
 Five Scenarios
