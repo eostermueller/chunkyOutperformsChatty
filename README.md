@@ -18,9 +18,10 @@ This repo contains five different SQL approaches to the same XML-over-HTTP web s
 
 The following graph shows throughput in red (tps / higher is better) and the scenario number in blue.
 See how the blue line rises like steps?  The test ran each scenario for 1 minute, then moved on to the next larger scenario number:  1,2,3,4,5 and then it repeated 8 more times.
+
 ![Inquiry for 5 accountIds](https://github.com/eostermueller/chunkyOutperformsChatty/blob/master/results/fiveAccounts/tps-by-scenario.png)
 
-The requirements:  
+The requirements for the web service:  
 
 ```
 Given 1 to N account numbers, return transaction history and balance info for all accounts.  
