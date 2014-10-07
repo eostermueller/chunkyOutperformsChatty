@@ -1,0 +1,12 @@
+	<Context path="/sqlPerfAntiPatterns" reloadable="true"  reload="true"  debug="0">
+		<Resource name="jdbc/pgbench" auth="Container" type="javax.sql.DataSource"
+				  username="postgres"
+				  password="postgres"
+				  driverClassName="org.postgresql.Driver"
+				  url="jdbc:postgresql://localhost:5432/db_pgbench"
+				  maxActive="20"
+				  maxIdle="10"
+				  validationQuery="select 1"
+				   />
+		<ResourceLink name="jdbc/pgbench" global="jdbc/pgbench" type="javax.sql.DataSource"/>
+	</Context>
