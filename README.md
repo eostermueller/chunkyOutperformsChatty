@@ -38,3 +38,27 @@ The smaller the scenario number, the fewer the SQL invocations to accomplish the
 | [Scenario_3](https://github.com/eostermueller/chunkyOutperformsChatty/tree/master/src/main/java/com/github/eostermueller/pgbench/dataaccess_3)    | 1 SELECT      | 1 SELECT per account |  |
 | [Scenario_4](https://github.com/eostermueller/chunkyOutperformsChatty/tree/master/src/main/java/com/github/eostermueller/pgbench/dataaccess_4)    | 1 SELECT per account  | 1 SELECT per account |  |
 | [Scenario_5](https://github.com/eostermueller/chunkyOutperformsChatty/tree/master/src/main/java/com/github/eostermueller/pgbench/dataaccess_5)    | 1 SELECT per account  | 1 SELECT PER account to retrieve unique IDs.  1 SELECT for each full history record. | The  Chattiest of the 5. |
+
+## Instructions
+The following populates the pgbench_accounts table, but not the pgbench_history table:
+```
+export DB_NAME=db_pgbench
+export SCALE_FACTOR=100
+export HOSTNAME=localhost
+export PORT=5432
+export USER=postgres
+
+pgbench -i -s $SCALE_FACTOR -h $HOSTNAME -p $PORT -U $USER $DB_NAME
+```
+
+```
+-- add primary key to history table
+db_pgbench=# ALTER TABLE pgbench_history ADD COLUMN hid SERIAL PRIMARY KEY;
+NOTICE:  ALTER TABLE will create implicit sequence "pgbench_history_hid_seq" for serial column "pgbench_history.hid"
+NOTICE:  ALTER TABLE / ADD PRIMARY KEY will create implicit index "pgbench_history_pkey" for table "pgbench_history"
+ALTER TABLE
+
+
+--added index for searching history for account id's.
+CREATE INDEX idx_aid on pgbench_history (aid);
+```
