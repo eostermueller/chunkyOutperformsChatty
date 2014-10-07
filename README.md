@@ -29,10 +29,10 @@ The smaller the scenario number, the fewer the SQL invocations to accomplish the
 4. For each account, one SELECT to the PGBENCH_ACCOUNTS.  For each account, a separate SELECT to the PGBENCH_HISTORY.
 5. For each account, one SELECT to the PGBENCH_ACCOUNTS.  For each account, one SELECT to retrieve all PGBENCH_HISTORY unique id's.  One Select for each PGBENCH_HISTORY record.  Ouch.
 
-  |2nd|3rd
---|--|--
- 1|a  | b
- 2|c  | d
- 3|c  | d
- 4|c  | d
- 5|c  | d
+|  |2nd|3rd|
+|--|---|---|
+| 1|a  | b|
+| 2|c  | d|
+| 3|c  | d|
+| 4|c  | d|
+| 5|c  | d|
