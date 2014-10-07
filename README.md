@@ -29,8 +29,10 @@ The smaller the scenario number, the fewer the SQL invocations to accomplish the
 4. For each account, one SELECT to the PGBENCH_ACCOUNTS.  For each account, a separate SELECT to the PGBENCH_HISTORY.
 5. For each account, one SELECT to the PGBENCH_ACCOUNTS.  For each account, one SELECT to retrieve all PGBENCH_HISTORY unique id's.  One Select for each PGBENCH_HISTORY record.  Ouch.
 
-| Tables        | Are           | Cool  |
+| Tables        | PGBENCH_ACCOUNTS           | PGBENCH_HISTORY  |
 | ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| Scenario 1    | right-aligned | $1600 |
+| Scenario 2    | centered      |   $12 |
+| Scenario 3    | are neat      |    $1 |
+| Scenario 4    | are neat      |    $1 |
+| Scenario 5    | are neat      |    $1 |
