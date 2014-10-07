@@ -23,16 +23,12 @@ All 5 scenarios must use the exact same pojos, and same XML serialization code.
 
 The smaller the scenario number, the fewer the SQL invocations to accomplish the exact same requirements.
 
-1. A single SELECT to a JOIN of the PGBENCH_ACCOUNTS and PGBENCH_HISTORY tables.
-2. Once SELECT to the PGBENCH_ACCOUNTS and one SELECT to the PGBENCH_HISTORY table.
-3. Once SELECT to the PGBENCH_ACCOUNTS.  For each account, a separate SELECT to the PGBENCH_HISTORY.
-4. For each account, one SELECT to the PGBENCH_ACCOUNTS.  For each account, a separate SELECT to the PGBENCH_HISTORY.
-5. For each account, one SELECT to the PGBENCH_ACCOUNTS.  For each account, one SELECT to retrieve all PGBENCH_HISTORY unique id's.  One Select for each PGBENCH_HISTORY record.  Ouch.
+
 
 | Tables        | PGBENCH_ACCOUNTS           | PGBENCH_HISTORY  |
-| ------------- |:-------------:| -----:|
-| Scenario 1    | right-aligned | $1600 |
-| Scenario 2    | centered      |   $12 |
-| Scenario 3    | are neat      |    $1 |
-| Scenario 4    | are neat      |    $1 |
-| Scenario 5    | are neat      |    $1 |
+| ------------- |:--------------|:----- |
+| Scenario 1    | 1 SELECT, JOIN to PGBENCH_HISTORY      |  |
+| Scenario 2    | 1 SELECT      |   1 SELECT |
+| Scenario 3    | 1 SELECT      | 1 SELECT per account |
+| Scenario 4    | 1 SELECT per account  | 1 SELECT per account |
+| Scenario 5    | 1 SELECT per account  | 1 SELECT PER account to retrieve unique IDs.  1 SELECT for each full history record. |
