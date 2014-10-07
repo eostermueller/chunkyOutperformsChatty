@@ -1,7 +1,7 @@
-Martin Fowler Was Right
+Chunky Outperforms Chatty
 ====================
 
-This repo contains code and results from a performance comparison of 5 different SQL data access strategies (in Java).
+This repo contains Java code and results from a performance comparison of 5 different SQL data access strategies, ranging from very chatty to very chunky.  Chatty = many SQL invocations that touch relative few records.  Chunky = fewer SQL invocations that touch more records).  The two chunkiest scenarios (1 & 2) outperform the rest, with 30% or more tps.
 
 [Martin Fowler](http://martinfowler.com/) was widely ignored back in 2003 when he gave [this advice](http://www.informit.com/articles/article.aspx?p=30661&seqNum=3) for better SQL performance:
 
@@ -10,11 +10,11 @@ This repo contains code and results from a performance comparison of 5 different
 never do repeated queries on the same table to get multiple rows."
 ```
 
-Was he really ignored?  Seems like it.  Reports of chatty db applications are everywhere ( [here](http://apmblog.compuware.com/2010/06/15/top-10-performance-problems-taken-from-zappos-monster-and-co/) [here](http://blogs.msdn.com/b/alikl/archive/2008/04/28/performance-sin-chatty-database-access-and-loops-plus-another-free-performance-tool.aspx) [here](http://dotnet.dzone.com/news/select-n1-problem-%E2%80%93-how)  ).  More than 10 years later, these results show that he was right.  Throughput goes up with fewer SQL invocations.  The rarely used techniques in scenarios 1 & 2 have 30% or more throughput than the other scenarios.  
+Was he really ignored?  Seems like it.  Chatty db applications that perform poorly are everywhere ( [here](http://apmblog.compuware.com/2010/06/15/top-10-performance-problems-taken-from-zappos-monster-and-co/) [here](http://blogs.msdn.com/b/alikl/archive/2008/04/28/performance-sin-chatty-database-access-and-loops-plus-another-free-performance-tool.aspx) [here](http://dotnet.dzone.com/news/select-n1-problem-%E2%80%93-how)  ).  More than 10 years later, these results show that Martin Fowler was right.  Throughput goes up with fewer SQL invocations.  
 
 Five Scenarios
 --------------
-This repo contains five different approaches to the same XML-over-HTTP web service:  a simple account and transaction inquiry to the [pgbench db](http://www.postgresql.org/docs/9.2/static/pgbench.html).  
+This repo contains five different SQL approaches to the same XML-over-HTTP web service:  a simple account and transaction inquiry to the [pgbench db](http://www.postgresql.org/docs/9.2/static/pgbench.html).  
 
 The requirements:  
 
@@ -25,7 +25,6 @@ and the same XML serialization code.
 ```
 
 The smaller the scenario number, the fewer the SQL invocations to accomplish the exact same requirements.
-
 
 
 | Tables        | PGBENCH_ACCOUNTS           | PGBENCH_HISTORY  | Notes |
