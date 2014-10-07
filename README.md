@@ -30,8 +30,8 @@ The smaller the scenario number, the fewer the SQL invocations to accomplish the
 
 | Tables        | PGBENCH_ACCOUNTS           | PGBENCH_HISTORY  | Notes |
 | ------------- |:--------------|:----- |:-----|
-| Scenario_1    | 1 SELECT, OUTER JOIN to PGBENCH_HISTORY      |   | Rarely seen in the wild |
+| Scenario_1    | 1 SELECT, OUTER JOIN to PGBENCH_HISTORY      |   | The Chunkiest of the 5.  Rarely seen in the wild |
 | Scenario_2    | 1 SELECT      |   1 SELECT | Rarely seen in the wild  |
 | Scenario_3    | 1 SELECT      | 1 SELECT per account |  |
 | Scenario_4    | 1 SELECT per account  | 1 SELECT per account |  |
-| Scenario_5    | 1 SELECT per account  | 1 SELECT PER account to retrieve unique IDs.  1 SELECT for each full history record. |  |
+| Scenario_5    | 1 SELECT per account  | 1 SELECT PER account to retrieve unique IDs.  1 SELECT for each full history record. | The  Chattiest of the 5. |
