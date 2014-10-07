@@ -10,7 +10,7 @@ This repo contains code and results from a performance comparison of 5 different
 never do repeated queries on the same table to get multiple rows."
 ```
 
-More than 10 years later, these results show that he was right.  Throughput goes up with fewer SQL invocations.  The rarely used techniques in scenarios 1 & 2 have 30% or more throughput than the other scenarios.  
+Was he really ignored?  Seems like it.  Reports of chatty db applications are everywhere ( [here](http://apmblog.compuware.com/2010/06/15/top-10-performance-problems-taken-from-zappos-monster-and-co/) [here](http://blogs.msdn.com/b/alikl/archive/2008/04/28/performance-sin-chatty-database-access-and-loops-plus-another-free-performance-tool.aspx)  ).  More than 10 years later, these results show that he was right.  Throughput goes up with fewer SQL invocations.  The rarely used techniques in scenarios 1 & 2 have 30% or more throughput than the other scenarios.  
 
 Five Scenarios
 --------------
