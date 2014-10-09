@@ -46,6 +46,11 @@ Scenario 1 has the fewest SQL invocations, 5 has the most (5 is a little extreme
 | [Scenario_4](https://github.com/eostermueller/chunkyOutperformsChatty/tree/master/src/main/java/com/github/eostermueller/pgbench/dataaccess_4)    | 1 SELECT per account  | 1 SELECT per account |  |
 | [Scenario_5](https://github.com/eostermueller/chunkyOutperformsChatty/tree/master/src/main/java/com/github/eostermueller/pgbench/dataaccess_5)    | 1 SELECT per account  | 1 SELECT PER account to retrieve unique IDs.  1 SELECT for each full history record. | The  Chattiest of the 5. |
 
+## Pudding
+Any one interested in checking my facts in the table above?  I know, you're busy, which is part of why production bound code/sql doesn't get a full vetting.  Instead of guessing, let's just look at what happened with each scenario -- graphically -- using [wuqiSpank.org](wuqiSpank.org).
+
+![](https://github.com/eostermueller/chunkyOutperformsChatty/blob/master/results/fiveAccounts/5-scenarios_wuqiSpank.png)
+
 ## Instructions
 
 1. Install PostGreSQL.  I used 9.2
