@@ -22,7 +22,7 @@ Five Scenarios
 In this repo, you'll find five different implementations to the same XML-over-HTTP web service:  a simple account and transaction inquiry to the [pgbench db](http://www.postgresql.org/docs/9.2/static/pgbench.html).  
 
 The following graph shows throughput in red (tps / higher is better) and the scenario number in blue.
-See how the blue line rises like steps?  The test ran each scenario for 1 minute, then moved on to the next larger scenario number:  1,2,3,4,5 and then it repeated 8 more times.
+See how the blue line rises like steps?  The test ran each scenario for 1 minute, then moved on to the next larger scenario number:  1,2,3,4,5 and then it repeated 8 more times.  Each request inquired upon 5 differnt accounts.
 
 ![Inquiry for 5 accountIds](https://github.com/eostermueller/chunkyOutperformsChatty/blob/master/results/fiveAccounts/tps-by-scenario.png)
 
