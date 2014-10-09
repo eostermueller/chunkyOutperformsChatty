@@ -34,7 +34,8 @@ All 5 scenarios must build the response data using the exact same pojos
 and the same XML serialization code.
 ```
 
-The smaller the scenario number, the fewer the SQL invocations to accomplish the exact same requirements.
+Scenario 1 has the fewest SQL invocations, 5 has the most (5 is a little extreme, actually), and 2, 3 and 4 line up inbetween (yes, in order).
+
 
 
 | Tables        | PGBENCH_ACCOUNTS           | PGBENCH_HISTORY  | Notes |
